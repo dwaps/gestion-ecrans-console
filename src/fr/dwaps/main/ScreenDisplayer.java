@@ -21,4 +21,22 @@ public class ScreenDisplayer {
 		System.out.println();
 	}
 	
+	public void repListScreen() {
+		System.out.println("Liste des répertoires");
+		System.out.print("Votre réponse ? ");
+		System.out.println();
+	}
+	
+	public void createRepScreen() {
+		System.out.println("Création d'un répertoire");
+		System.out.print("Votre réponse ? ");
+		System.out.println();
+	}
+	
+	public void createContactScreen() {
+		System.out.println("Création d'un contact");
+		System.out.print("Votre réponse ? ");
+		System.out.println();
+	}
+	
 }
