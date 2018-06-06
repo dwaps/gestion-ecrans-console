@@ -1,5 +1,6 @@
 package fr.dwaps.main;
 
+import java.awt.Menu;
 import java.util.Scanner;
 
 public class ScreenDisplayer {
@@ -8,9 +9,12 @@ public class ScreenDisplayer {
 	
 	public ScreenDisplayer(Scanner sc) {
 		this.sc = sc;
+		mainMenu();
 	}
 	
 	public void mainMenu() {
+		clearScreen();
+		
 		String menu = " Voir reps (V) | Créer rep (CR) | Créer contact (CC) ";
 		String deco = "-";
 		for (int i = 0; i < menu.length(); i++) deco += "-";
@@ -28,21 +32,30 @@ public class ScreenDisplayer {
 	}
 	
 	public void repListScreen() {
+		if (!firstStart) mainMenu();
+		
 		System.out.println("Liste des répertoires");
 		System.out.print("Votre réponse ? ");
-		System.out.println();
 	}
 	
 	public void createRepScreen() {
+		mainMenu();
+		
 		System.out.println("Création d'un répertoire");
 		System.out.print("Votre réponse ? ");
-		System.out.println();
 	}
 	
 	public void createContactScreen() {
+		mainMenu();
+		
 		System.out.println("Création d'un contact");
 		System.out.print("Votre réponse ? ");
-		System.out.println();
+	}
+	
+	private void clearScreen() {
+		for (int i = 0; i < 50; i++) {
+			System.out.println();
+		}
 	}
 	
 }

@@ -12,7 +12,6 @@ public class MainClass {
 		String actionName;
 		
 		while(true) {
-			displayer.mainMenu();
 			actionName = sc.nextLine();
 			ActionManager.getAction(actionName).executeAction(displayer);
 		}
