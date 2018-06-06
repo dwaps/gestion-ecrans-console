@@ -2,6 +2,7 @@ package fr.dwaps.main;
 
 import java.util.Scanner;
 
+import fr.dwaps.business.AbstractAction;
 import fr.dwaps.business.ActionManager;
 
 public class MainClass {
@@ -13,10 +14,13 @@ public class MainClass {
 		
 		while(true) {
 			actionName = sc.nextLine();
-			ActionManager.getAction(actionName).executeAction(displayer);
+			AbstractAction action = ActionManager.getAction(actionName);
+			if (action == null) break;
+			action.executeAction(displayer);
 		}
 		
-//		sc.close();
-		
+		displayer.clearScreen();
+		displayer.deco(" Fin du programme ! ");
+		sc.close();
 	}
 }

@@ -14,21 +14,7 @@ public class ScreenDisplayer {
 	
 	public void mainMenu() {
 		clearScreen();
-		
-		String menu = " Voir reps (V) | Créer rep (CR) | Créer contact (CC) ";
-		String deco = "-";
-		for (int i = 0; i < menu.length(); i++) deco += "-";
-		deco += "-";
-		
-		System.out.println(deco);
-		System.out.println("|" + menu + "|");
-		System.out.println(deco);
-		System.out.println();
-		
-		if (firstStart) {
-			repListScreen();
-			firstStart = false;
-		}
+		deco(" Voir reps (V) | Créer rep (CR) | Créer contact (CC) ");
 	}
 	
 	public void repListScreen() {
@@ -52,7 +38,23 @@ public class ScreenDisplayer {
 		System.out.print("Votre réponse ? ");
 	}
 	
-	private void clearScreen() {
+	public void deco(String str) {
+		String deco = "-";
+		for (int i = 0; i < str.length(); i++) deco += "-";
+		deco += "-";
+		
+		System.out.println(deco);
+		System.out.println("|" + str + "|");
+		System.out.println(deco);
+		System.out.println();
+		
+		if (firstStart) {
+			repListScreen();
+			firstStart = false;
+		}
+	}
+	
+	public void clearScreen() {
 		for (int i = 0; i < 50; i++) {
 			System.out.println();
 		}
