@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class ScreenDisplayer {
 	private Scanner sc;
+	private boolean firstStart = true;
 	
 	public ScreenDisplayer(Scanner sc) {
 		this.sc = sc;
@@ -19,6 +20,11 @@ public class ScreenDisplayer {
 		System.out.println("|" + menu + "|");
 		System.out.println(deco);
 		System.out.println();
+		
+		if (firstStart) {
+			repListScreen();
+			firstStart = false;
+		}
 	}
 	
 	public void repListScreen() {
